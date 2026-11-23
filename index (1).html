@@ -18,10 +18,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;margin:0}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(27,27,27,.85);backdrop-filter:blur(10px)}
-nav a{text-decoration:none;margin-left:22px;color:var(--mut);font-size:.9rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(27,27,27,.88);backdrop-filter:blur(10px)}
+nav .in{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:12px 5vw}
+nav .lk{display:flex;gap:26px;align-items:center}
+nav a{text-decoration:none;color:var(--mut);font-size:.9rem;line-height:1}
 nav a:hover{color:var(--ink)}
-nav b{font-weight:600}
+nav b{font-size:1.5rem;line-height:1;font-weight:400}
 section{position:relative;z-index:1;padding:11vh 5vw;max-width:1100px;margin:0 auto}
 .orb{position:absolute;border-radius:50%;filter:blur(28px);opacity:.8;pointer-events:none}
 .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center}
@@ -42,13 +44,8 @@ h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.4em}
 .ab{display:grid;grid-template-columns:300px 1fr;gap:0;border:1px solid var(--line);background:rgba(27,27,27,.88)}
 .ab .l{padding:24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
 .ab h2{font-size:3.2rem;margin:0}
-.seg{display:flex}
-.seg button{flex:1;padding:5px 4px;border:1px solid var(--line);background:#111;color:var(--mut);font:500 .66rem 'JetBrains Mono',monospace;letter-spacing:.06em;cursor:pointer}
-.seg button[aria-pressed=true]{background:var(--ink);color:#111}
 .ab .l p{margin:0;font-size:.92rem;color:#cfccc3}
 .ab .l p.c{font-style:italic;color:var(--mut);font-size:.86rem}
-.ab .big{font:500 clamp(2rem,5vw,2.8rem)/1.05 'Fraunces',serif;min-height:2.2em;color:var(--lime)}
-#bub{width:100%;display:block;min-height:320px}
 /* experience dashboard */
 .dash{border-radius:26px;padding:18px;background:radial-gradient(900px 500px at 70% 0%,rgba(110,60,255,.22),transparent 60%),#0b0a14;border:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .gc{position:relative;border-radius:18px;padding:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);overflow:hidden}
@@ -59,14 +56,28 @@ button.gc{text-align:left;color:inherit;font:inherit;cursor:pointer;transition:b
 button.gc:hover,button.gc[aria-pressed=true]{border-color:var(--pur);box-shadow:0 0 24px rgba(165,107,255,.25)}
 .pb{height:5px;border-radius:9px;background:rgba(255,255,255,.1);margin-top:12px}
 .pb i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#6b8cff,#e26bd8)}
-.glb{grid-column:1/-1;position:relative;height:440px;padding:0;background:#07050f}
-.glb canvas{width:100%;height:100%;display:block;cursor:pointer}
-.glb .k{position:absolute;left:18px;top:16px;z-index:2}
-.pop{position:absolute;right:18px;bottom:18px;width:min(370px,calc(100% - 36px));padding:18px;border-radius:16px;background:rgba(20,16,40,.94);border:1px solid var(--pur);box-shadow:0 0 30px rgba(165,107,255,.3);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .35s;pointer-events:none}
-.pop.on{opacity:1;transform:none;pointer-events:auto}
-.pop h3{font:600 1.2rem 'Instrument Sans',sans-serif;margin:.3rem 0}
-.pop ul{margin:.5rem 0 0;padding-left:1.1rem;color:#cfcaea;font-size:.9rem}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.skc{background:rgba(27,27,27,.96);padding:22px}
+.skh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font:500 .74rem 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.skh b{color:var(--c);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{border:1px solid var(--line);border-left:3px solid var(--c);padding:3px 11px;border-radius:6px;font-size:.88rem;background:var(--card);transition:background .15s,color .15s}
+.chips span:hover{background:var(--c);color:#1b1b1b}
+.jy,.det,.tl{grid-column:span 2}
 .tl{grid-column:1/-1}
+.det{display:flex;flex-direction:column;justify-content:center}
+.det h3{font:600 1.5rem 'Instrument Sans',sans-serif;margin:.4rem 0}
+.det ul{margin:.6rem 0 0;padding-left:1.1rem;color:#cfcaea}
+.jb{position:relative;width:100%;max-width:360px;aspect-ratio:300/440;margin:12px auto 6px}
+.jb svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.jb path{fill:none;stroke:#cfc9f2;stroke-width:1.5;vector-effect:non-scaling-stroke}
+.ob{position:absolute;width:0;height:0;padding:0;border:0;background:none;color:var(--ink);cursor:pointer}
+.ob i{position:absolute;left:-34px;top:-34px;width:68px;height:68px;border-radius:50%;background:radial-gradient(circle,var(--c) 40%,transparent 72%);opacity:.8;transition:transform .25s,opacity .25s}
+.ob[aria-pressed=true] i,.ob:hover i{transform:scale(1.3);opacity:1}
+.ob span{position:absolute;top:-20px;left:44px;width:150px;text-align:left;font-size:.85rem;line-height:1.3}
+.ob.r span{left:auto;right:44px;text-align:right}
+.ob b{display:block;font-weight:600}
+.ob em{font:normal .7rem 'JetBrains Mono',monospace;color:#a9a4c4}
 .ax{position:relative;margin-top:14px;height:150px;border-left:1px solid rgba(255,255,255,.15)}
 .ax .y{position:absolute;top:0;bottom:0;border-left:1px dashed rgba(255,255,255,.1);font:.62rem 'JetBrains Mono',monospace;color:#8a85a8;padding-left:3px}
 .ax .bar{position:absolute;height:20px;border-radius:10px;background:linear-gradient(90deg,#6b8cff,#a56bff);font:.64rem/20px 'JetBrains Mono',monospace;padding:0 8px;color:#fff;white-space:nowrap;overflow:visible}
@@ -103,20 +114,21 @@ footer{position:relative;z-index:1;text-align:center;color:var(--mut);padding:0 
 .pt{position:fixed;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;pointer-events:none;z-index:98;animation:fade .9s forwards}
 @keyframes fade{to{opacity:0;transform:scale(.2)}}
 @media (hover:hover) and (pointer:fine){body.cc,body.cc *{cursor:none!important}body.cc #cur,body.cc #dot,body.cc #xy{opacity:1}}
-@media (max-width:760px){.ab{grid-template-columns:1fr}.ab .l{border-right:0;border-bottom:1px solid var(--line)}.dash{grid-template-columns:1fr 1fr}.tl,@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pt{display:none}*{transition:none!important}}
+@media (max-width:760px){.ab{grid-template-columns:1fr}.ab .l{border-right:0;border-bottom:1px solid var(--line)}.sk{grid-template-columns:1fr}.dash{grid-template-columns:1fr 1fr}.jy,.det,.tl{grid-column:1/-1}nav .lk{gap:14px}.pr,.pr:nth-child(even){flex-direction:column}.pr .orbz{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pt{display:none}*{transition:none!important}}
 </style>
 </head>
 <body>
 <div id="cur"></div><div id="dot"></div><div id="xy" class="mono"></div>
 
-<nav><b>Eileen Chuba</b><div><a href="#about">About me</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
+<nav><div class="in"><b role="img" aria-label="Eileen Chuba" title="Eileen Chuba">♠️</b><div class="lk"><a href="#about">About me</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></div></nav>
 
 <section class="hero" id="top">
   <div class="orb" style="width:340px;height:340px;background:var(--lilac);right:2%;top:10%"></div>
   <div class="orb" style="width:200px;height:200px;background:var(--lime);right:22%;top:48%"></div>
   <div class="orb" style="width:260px;height:260px;background:var(--pink);right:-2%;top:62%"></div>
   <div class="tags mono"><span><i></i>Open to internships</span><span>Loves messy datasets</span><span>Building in public</span></div>
-  <h1 style="margin-top:1.4rem">Eileen Amarachi Chuba<span>Computer Science student, Dundee</span></h1>
+  <h1 style="margin-top:1.4rem">Eileen Amarachi Chuba<span>Computer Science Student, Dundee</span></h1>
   <p>I’m a second-year Computer Science student with a growing interest in <em>machine learning, artificial intelligence and software development.</em> I enjoy exploring how intelligent systems can be built, trained and deployed to solve real-world problems, and I’m actively developing my skills across Python, Java, JavaScript and data-driven technologies.</p>
   <div class="btns"><a class="btn fill" href="#contact">Say hi</a><a class="btn" href="#experience">See my experience</a></div>
 </section>
@@ -125,25 +137,34 @@ footer{position:relative;z-index:1;text-align:center;color:var(--mut);padding:0 
   <div class="ab">
     <div class="l">
       <h2>About me</h2>
-      <div class="big" id="big" aria-live="polite"></div>
-      <div class="seg" role="group" aria-label="Animation speed"><button aria-pressed="false" data-s="3400">SLOW</button><button aria-pressed="true" data-s="2000">MEDIUM</button><button aria-pressed="false" data-s="900">FAST</button></div>
-      <p id="cap" class="c"></p>
-      <p>Through coursework and personal projects I’ve built a solid foundation in programming, algorithms, data structures and software engineering. Right now I’m strengthening my ML and data science fundamentals while growing my project portfolio.</p>
+      <p>Through coursework and personal projects I’ve built a solid foundation in programming, algorithms, data structures and software engineering.</p>
+      <p>Right now I’m strengthening my ML and data science fundamentals while growing my project portfolio and looking for opportunities to grow as a developer.</p>
     </div>
-    <canvas id="bub" width="640" height="520" role="img" aria-label="Skills as clusters of dots. One skill at a time moves to the centre."></canvas>
+    <div class="sk">
+      <div class="skc" style="--c:#b8b0dd"><div class="skh"><b>Languages</b><span>6</span></div><div class="chips"><span>Python</span><span>Java</span><span>C</span><span>C++</span><span>JavaScript</span><span>SQL</span></div></div>
+      <div class="skc" style="--c:#7cc8f5"><div class="skh"><b>Tools</b><span>7</span></div><div class="chips"><span>Git/GitHub</span><span>VS Code</span><span>Linux/Bash</span><span>Shell scripting</span><span>Node.js</span><span>MySQL</span><span>AWS</span></div></div>
+      <div class="skc" style="--c:#d4e000"><div class="skh"><b>Concepts</b><span>5</span></div><div class="chips"><span>OOP</span><span>Algorithmic complexity</span><span>Data structures</span><span>Version control</span><span>Unit testing</span></div></div>
+      <div class="skc" style="--c:#e0b4da"><div class="skh"><b>Soft skills</b><span>6</span></div><div class="chips"><span>Teamwork</span><span>Communication</span><span>Leadership</span><span>Mentoring</span><span>Problem-solving</span><span>Organisation</span></div></div>
+    </div>
   </div>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
-  <p class="sub">Tap a card to see the details.</p>
+  <p class="sub">Tap a card or an orb to see the details.</p>
   <div class="dash">
     <button class="gc" data-i="0" aria-pressed="true"><div class="k">Degree</div><div class="big">Y2/5</div><div class="t">BSc (Hons) Computer Science, Data Science and AI</div><div class="pb"><i style="width:26%"></i></div></button>
     <button class="gc" data-i="1" aria-pressed="false"><div class="k">Society</div><div class="big">Sec.</div><div class="t">Women in STEM, since Sep 2026</div></button>
     <button class="gc" data-i="2" aria-pressed="false"><div class="k">Hackathon</div><div class="big">48h</div><div class="t">Team of 4, Sep 2026</div></button>
     <button class="gc" data-i="3" aria-pressed="false"><div class="k">Peer tutor</div><div class="big">6 mo</div><div class="t">Jan – Jun 2025</div></button>
-    <div class="gc glb"><canvas id="gl" aria-label="Revolving globe with pins for each experience"></canvas><div class="k">Experience globe · tap a pin</div>
-      <div class="pop" id="pop" aria-live="polite"><div class="k" id="pk"></div><h3 id="ph"></h3><div class="t" id="pw"></div><ul id="pl"></ul></div></div>
+    <div class="gc jy"><div class="k">Journey · tap an orb</div>
+      <div class="jb"><svg viewBox="0 0 300 440" preserveAspectRatio="none" aria-hidden="true"><path d="M150 0C150 25 90 25 90 50C90 105 210 105 210 160C210 215 90 215 90 270C90 325 210 325 210 380C210 410 150 410 150 440"/></svg>
+        <button class="ob" data-i="3" aria-pressed="false" style="left:30%;top:11.4%;--c:#7cc8f5"><i></i><span><b>Peer tutor</b><em>Jan – Jun 2025</em></span></button>
+        <button class="ob r" data-i="0" aria-pressed="true" style="left:70%;top:36.4%;--c:#b8b0dd"><i></i><span><b>BSc Computer Science</b><em>2025 – 2030</em></span></button>
+        <button class="ob" data-i="2" aria-pressed="false" style="left:30%;top:61.4%;--c:#d4e000"><i></i><span><b>48-hour hackathon</b><em>Sep 2026</em></span></button>
+        <button class="ob r" data-i="1" aria-pressed="false" style="left:70%;top:86.4%;--c:#e0b4da"><i></i><span><b>Women in STEM Secretary</b><em>Sep 2026 – present</em></span></button>
+      </div></div>
+    <div class="gc det" aria-live="polite"><div class="k" id="pk"></div><h3 id="ph"></h3><div class="t" id="pw"></div><ul id="pl"></ul></div>
     <div class="gc tl"><div class="k">Timeline</div><div class="ax" id="ax"></div></div>
   </div>
 </section>
@@ -220,78 +241,17 @@ addEventListener('mousemove',function(e){
   xy.textContent='x '+tx+'  y '+ty;
   var n=Date.now();
   if(!rm&&n-last>70){last=n;var p=document.createElement('div');p.className='pt';p.style.left=tx+'px';p.style.top=ty+'px';p.style.background=cols[(n/70|0)%4];document.body.appendChild(p);setTimeout(function(){p.remove()},900)}
-  cur.classList.toggle('big',!!e.target.closest('a,button'))
+  cur.classList.toggle('big',!!e.target.closest('a,button,.chips span'))
 });
 if(fine){document.body.classList.add('cc');(function l(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(l)})()}
-/* skill dots */
-var G=[
- ['Languages','#b8b0dd',['Python','Java','C','C++','JavaScript','SQL'],160,140],
- ['Tools','#7cc8f5',['Git/GitHub','VS Code','Linux/Bash','Shell scripting','Node.js','MySQL','AWS'],480,140],
- ['Concepts','#d4e000',['OOP','Algorithmic complexity','Data structures','Version control','Unit testing'],480,400],
- ['Soft skills','#e0b4da',['Teamwork','Communication','Leadership','Mentoring','Problem-solving','Organisation'],160,400]];
-var CEN=[320,270],PER=14,C0=3.6,ds=[],fl=[],ix=[0,0,0,0],bc=$('#bub'),b=bc.getContext('2d'),foc=0,sp=2000,tot=0,lt=Date.now(),ft=0;
-G.forEach(function(g,gi){g[2].forEach(function(n,si){fl.push([gi,si]);tot++;for(var k=0;k<PER;k++)ds.push({g:gi,s:si,k:k,i:ix[gi]++,x:g[3]+(Math.random()-.5)*200,y:g[4]+(Math.random()-.5)*200,vx:0,vy:0,p:Math.random()*6.28})})});
-for(var q=fl.length-1;q>0;q--){var j=Math.floor(Math.random()*(q+1)),tmp=fl[q];fl[q]=fl[j];fl[j]=tmp}
-function lab(){var f=fl[foc],g=G[f[0]],e=$('#big');e.textContent=g[2][f[1]];e.style.color=g[1];$('#cap').textContent=g[0]+' · '+g[2].length+' of '+tot+' skills. Click a group to jump to it.'}
-$$('.seg button').forEach(function(x){x.onclick=function(){sp=+x.dataset.s;ft=0;$$('.seg button').forEach(function(y){y.setAttribute('aria-pressed',y===x)})}});
-lab();
-bc.addEventListener('click',function(e){var r=bc.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*640,py=(e.clientY-r.top)/r.height*520,best=-1,bd=110;
-  G.forEach(function(g,gi){var d=Math.hypot(g[3]-px,g[4]-py);if(d<bd){bd=d;best=gi}});if(best<0)return;
-  var idx=[];fl.forEach(function(f,i){if(f[0]===best&&i!==foc)idx.push(i)});foc=idx[Math.floor(Math.random()*idx.length)];ft=0;lab()});
-function dots(){
-  var now=Date.now();ft+=now-lt;lt=now;if(!rm&&ft>sp){ft=0;foc=(foc+1)%fl.length;lab()}
-  var f=fl[foc];b.clearRect(0,0,640,520);
-  ds.forEach(function(d){var g=G[d.g],tx,ty,on=d.g===f[0]&&d.s===f[1];
-    if(on){var a=d.k*2.4,r=4*Math.sqrt(d.k);tx=CEN[0]+Math.cos(a)*r;ty=CEN[1]+Math.sin(a)*r}
-    else{var a2=d.i*2.4,r2=C0*Math.sqrt(d.i);tx=g[3]+Math.cos(a2)*r2+Math.sin(now/900+d.p)*1.6;ty=g[4]+Math.sin(a2)*r2+Math.cos(now/1100+d.p)*1.6}
-    d.vx+=(tx-d.x)*.05;d.vy+=(ty-d.y)*.05;d.vx*=.8;d.vy*=.8;d.x+=d.vx;d.y+=d.vy;
-    b.beginPath();b.arc(d.x,d.y,on?3.7:3,0,7);b.fillStyle=g[1];b.globalAlpha=on?1:.85;b.fill()});
-  b.globalAlpha=1;b.textAlign='center';b.font='500 11px JetBrains Mono';
-  G.forEach(function(g){var rad=C0*Math.sqrt(g[2].length*PER)+18;b.fillStyle='#ece9e0';b.fillText(g[0].toUpperCase(),g[3],g[4]-rad);b.fillStyle='#9a978e';b.fillText(Math.round(g[2].length/tot*100)+'%',g[3],g[4]-rad+13)});
-  b.fillStyle='#ece9e0';b.fillText('IN FOCUS',CEN[0],CEN[1]-36);
-  requestAnimationFrame(dots)
-}
-dots();
 /* experience globe + timeline */
 var E=[
  ['Degree','BSc (Hons) Computer Science (Data Science and AI)','University of Dundee, with Industrial Placement · 2025 – 2030',['Coursework: Data Structures & Algorithms, Multi-Paradigm Programming, Software Engineering, Artificial Intelligence.'],35,-30],
  ['Leadership','Secretary, Women in STEM Society','University of Dundee · Sep 2026 – present',['Support weekly workshops and hackathon prep sessions.','Help organise the society’s first beginner-friendly hackathon.'],-20,70],
  ['Hackathon','Participant, University of Dundee Hackathon','Sep 2026 · 48 hours',['Worked in a team with 3 peers.','Built and presented a working prototype to a panel of judges.'],15,150],
  ['Tutoring','Peer tutor, Introductory Programming','St Andrews RC High School · Jan – Jun 2025',['Ran weekly sessions helping students debug Java assignments.','Created a beginner-friendly reference guide on common errors.'],-30,-120]];
-var NM=['BSc','Women in STEM','Hackathon','Peer tutor'];
-var gl=$('#gl'),g3=gl.getContext('2d'),gW=0,gH=0,yaw=0,tilt=.3,tgY=0,tgT=.3,gs='spin',gt=0,lim=120,sel=0,lastS=-1,DT=[],GR=100,GX=0,GY=0;
-for(var i0=0;i0<280;i0++)DT.push([Math.asin(Math.random()*2-1),Math.random()*6.2832]);
-function grs(){var d=devicePixelRatio||1;gW=gl.offsetWidth;gH=gl.offsetHeight;gl.width=gW*d;gl.height=gH*d;g3.setTransform(d,0,0,d,0,0)}
-function ang(a){return((a+Math.PI)%6.283185+6.283185)%6.283185-Math.PI}
-function gp(la,lo){var x=Math.cos(la)*Math.sin(lo+yaw),y=Math.sin(la),z=Math.cos(la)*Math.cos(lo+yaw),y2=y*Math.cos(tilt)-z*Math.sin(tilt),z2=y*Math.sin(tilt)+z*Math.cos(tilt);return[GX+x*GR,GY-y2*GR,z2]}
-function gdraw(){
-  var wide=gW>700;GR=wide?Math.min(gW*.27,gH*.37):Math.min(gW*.32,gH*.24);GX=wide?gW*.36:gW/2;GY=wide?gH*.52:gH*.36;
-  g3.clearRect(0,0,gW,gH);
-  var gr=g3.createRadialGradient(GX,GY,GR*.2,GX,GY,GR*1.6);gr.addColorStop(0,'rgba(110,60,255,.3)');gr.addColorStop(1,'rgba(7,5,15,0)');g3.fillStyle=gr;g3.fillRect(0,0,gW,gH);
-  g3.beginPath();g3.arc(GX,GY,GR,0,7);g3.fillStyle='rgba(20,12,50,.55)';g3.fill();
-  var fr=new Path2D(),bk=new Path2D(),la,lo,pts;
-  function line(p){for(var i=1;i<p.length;i++){var a=p[i-1],c=p[i],P=(a[2]+c[2])>0?fr:bk;P.moveTo(a[0],a[1]);P.lineTo(c[0],c[1])}}
-  for(la=-60;la<=60;la+=30){pts=[];for(lo=0;lo<=360;lo+=10)pts.push(gp(la*Math.PI/180,lo*Math.PI/180));line(pts)}
-  for(lo=0;lo<360;lo+=30){pts=[];for(la=-90;la<=90;la+=10)pts.push(gp(la*Math.PI/180,lo*Math.PI/180));line(pts)}
-  g3.lineWidth=1;g3.strokeStyle='rgba(165,107,255,.12)';g3.stroke(bk);g3.strokeStyle='rgba(150,130,255,.5)';g3.stroke(fr);
-  DT.forEach(function(d){var p=gp(d[0],d[1]),f=p[2]>0;g3.fillStyle=f?'rgba(140,160,255,.85)':'rgba(140,160,255,.12)';g3.fillRect(p[0],p[1],f?2:1.2,f?2:1.2)});
-  E.forEach(function(e,i){var p=gp(e[4]*Math.PI/180,e[5]*Math.PI/180);e.p=p;if(p[2]<=0)return;var on=i===sel&&gs==='show';
-    g3.beginPath();g3.arc(p[0],p[1],on?9:5,0,7);g3.fillStyle=on?'#e26bd8':'#a56bff';g3.fill();
-    g3.beginPath();g3.arc(p[0],p[1],(on?18:11)+(Math.sin(Date.now()/300)+1)*3,0,7);g3.strokeStyle='rgba(226,107,216,.5)';g3.stroke();
-    g3.fillStyle='#ece9e0';g3.font='500 11px JetBrains Mono';g3.textAlign='left';g3.fillText(NM[i],p[0]+16,p[1]+4)});
-  g3.beginPath();g3.arc(GX,GY,GR,0,7);g3.strokeStyle='rgba(165,107,255,.6)';g3.stroke();
-}
-function showCard(i){$$('.gc[data-i]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.i==i)});var e=E[i];$('#pk').textContent=e[0];$('#ph').textContent=e[1];$('#pw').textContent=e[2];$('#pl').innerHTML=e[3].map(function(s){return'<li>'+s+'</li>'}).join('');$('#pop').classList.add('on')}
-function hideCard(){$('#pop').classList.remove('on')}
-function go(i){sel=i;lastS=i;tgY=-E[i][5]*Math.PI/180;tgT=E[i][4]*Math.PI/180;hideCard();gs='turn';gt=0;if(rm){yaw=tgY;tilt=tgT;gs='show';showCard(i);gdraw()}}
-$$('.gc[data-i]').forEach(function(x){x.onclick=function(){go(+x.dataset.i)}});
-gl.addEventListener('click',function(e){var r=gl.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;E.forEach(function(en,i){if(en.p&&en.p[2]>0&&Math.hypot(en.p[0]-px,en.p[1]-py)<24)go(i)})});
-function gloop(){
-  if(gs==='spin'){yaw+=.011;tilt+=(.3-tilt)*.04;gt++;if(gt>lim){var n;do{n=Math.floor(Math.random()*E.length)}while(n===lastS);go(n)}}
-  else if(gs==='turn'){var d=ang(tgY-yaw);yaw+=d*.05;tilt+=(tgT-tilt)*.05;if(Math.abs(d)<.012&&Math.abs(tgT-tilt)<.012){gs='show';gt=0;showCard(sel)}}
-  else{gt++;if(gt>360){hideCard();gs='spin';gt=0;lim=80+Math.random()*140}}
-  gdraw();if(!rm)requestAnimationFrame(gloop)}
-addEventListener('resize',function(){grs();gdraw()});grs();gdraw();if(rm)go(0);gloop();
+function showCard(i){$$('[data-i]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.i==i)});var e=E[i];$('#pk').textContent=e[0];$('#ph').textContent=e[1];$('#pw').textContent=e[2];$('#pl').innerHTML=e[3].map(function(s){return'<li>'+s+'</li>'}).join('')}
+$$('[data-i]').forEach(function(x){x.onclick=function(){showCard(+x.dataset.i)}});showCard(0);
 var ax=$('#ax'),Y0=2025,SP=5,P=function(y){return(y-Y0)/SP*100};
 for(var y=2025;y<=2030;y++)ax.insertAdjacentHTML('beforeend','<div class="y" style="left:'+P(y)+'%">'+y+'</div>');
 [[2025.7,2030,'BSc'],[2025,2025.5,'Tutor'],[2026.7,2026.9,'Secretary'],[2026.7,2026.74,'Hackathon']].forEach(function(r,i){
