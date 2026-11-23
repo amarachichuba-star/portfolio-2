@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eileen Amarachi Chuba — Portfolio</title>
+<meta name="description" content="Second-year Computer Science student interested in machine learning, AI and software development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1b1b1b;--grid:#2c2c2c;--ink:#ece9e0;--mut:#9a978e;--line:#383733;--card:#232220;--blue:#7cc8f5;--lime:#d4e000;--lilac:#b8b0dd;--pink:#e0b4da;--hot:#f0a583;--pur:#a56bff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 1.05rem/1.65 'Instrument Sans',system-ui,sans-serif;overflow-x:hidden;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:30px 30px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(#6a8f9a 1px,transparent 1px),linear-gradient(90deg,#6a8f9a 1px,transparent 1px);background-size:30px 30px;opacity:.55;-webkit-mask-image:radial-gradient(180px circle at var(--mx,50%) var(--my,30%),#000,transparent);mask-image:radial-gradient(180px circle at var(--mx,50%) var(--my,30%),#000,transparent)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.02em}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(27,27,27,.85);backdrop-filter:blur(10px)}
+nav a{text-decoration:none;margin-left:22px;color:var(--mut);font-size:.9rem}
+nav a:hover{color:var(--ink)}
+nav b{font-weight:600}
+section{position:relative;z-index:1;padding:11vh 5vw;max-width:1100px;margin:0 auto}
+.orb{position:absolute;border-radius:50%;filter:blur(28px);opacity:.8;pointer-events:none}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(3rem,9vw,7rem);letter-spacing:-.03em;position:relative;z-index:1}
+.hero h1 span{display:block;font-size:.4em;color:var(--mut);letter-spacing:-.01em;margin-top:.3em}
+.hero p{max-width:34em;margin:1.6rem 0;position:relative;z-index:1}
+.hero p em{font-style:normal;background:linear-gradient(transparent 62%,rgba(124,200,245,.4) 62%)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+.tags span{border:1px solid var(--line);border-radius:99px;padding:4px 12px;background:var(--card)}
+.tags i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:7px;box-shadow:0 0 0 3px rgba(212,224,0,.25)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:12px 22px;border-radius:99px;border:1px solid var(--ink);text-decoration:none;font:500 1rem 'Instrument Sans',sans-serif;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.btn.fill{background:var(--ink);color:#1b1b1b}
+.btn:hover{background:var(--blue);color:#1b1b1b;border-color:var(--blue)}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.4em}
+.sub{color:var(--mut);max-width:36em;margin:0 0 2rem}
+/* about / bubbles */
+.ab{display:grid;grid-template-columns:300px 1fr;gap:0;border:1px solid var(--line);background:rgba(27,27,27,.88)}
+.ab .l{padding:24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.ab h2{font-size:3.2rem;margin:0}
+.seg{display:flex}
+.seg button{flex:1;padding:5px 4px;border:1px solid var(--line);background:#111;color:var(--mut);font:500 .66rem 'JetBrains Mono',monospace;letter-spacing:.06em;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:#111}
+.ab .l p{margin:0;font-size:.92rem;color:#cfccc3}
+.ab .l p.c{font-style:italic;color:var(--mut);font-size:.86rem}
+.ab .big{font:500 clamp(2rem,5vw,2.8rem)/1.05 'Fraunces',serif;min-height:2.2em;color:var(--lime)}
+#bub{width:100%;display:block;min-height:320px}
+/* experience dashboard */
+.dash{border-radius:26px;padding:18px;background:radial-gradient(900px 500px at 70% 0%,rgba(110,60,255,.22),transparent 60%),#0b0a14;border:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gc{position:relative;border-radius:18px;padding:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.gc .k{font:500 .68rem 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#b9b3d6}
+.gc .big{font:600 clamp(2.2rem,5vw,3.4rem)/1 'Instrument Sans',sans-serif;color:#6b8cff;margin:.5rem 0 .2rem}
+.gc .t{font-size:.84rem;color:#a9a4c4;line-height:1.4}
+button.gc{text-align:left;color:inherit;font:inherit;cursor:pointer;transition:border-color .2s,transform .2s}
+button.gc:hover,button.gc[aria-pressed=true]{border-color:var(--pur);box-shadow:0 0 24px rgba(165,107,255,.25)}
+.pb{height:5px;border-radius:9px;background:rgba(255,255,255,.1);margin-top:12px}
+.pb i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#6b8cff,#e26bd8)}
+.glb{grid-column:1/-1;position:relative;height:440px;padding:0;background:#07050f}
+.glb canvas{width:100%;height:100%;display:block;cursor:pointer}
+.glb .k{position:absolute;left:18px;top:16px;z-index:2}
+.pop{position:absolute;right:18px;bottom:18px;width:min(370px,calc(100% - 36px));padding:18px;border-radius:16px;background:rgba(20,16,40,.94);border:1px solid var(--pur);box-shadow:0 0 30px rgba(165,107,255,.3);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .35s;pointer-events:none}
+.pop.on{opacity:1;transform:none;pointer-events:auto}
+.pop h3{font:600 1.2rem 'Instrument Sans',sans-serif;margin:.3rem 0}
+.pop ul{margin:.5rem 0 0;padding-left:1.1rem;color:#cfcaea;font-size:.9rem}
+.tl{grid-column:1/-1}
+.ax{position:relative;margin-top:14px;height:150px;border-left:1px solid rgba(255,255,255,.15)}
+.ax .y{position:absolute;top:0;bottom:0;border-left:1px dashed rgba(255,255,255,.1);font:.62rem 'JetBrains Mono',monospace;color:#8a85a8;padding-left:3px}
+.ax .bar{position:absolute;height:20px;border-radius:10px;background:linear-gradient(90deg,#6b8cff,#a56bff);font:.64rem/20px 'JetBrains Mono',monospace;padding:0 8px;color:#fff;white-space:nowrap;overflow:visible}
+.ax .now{position:absolute;top:0;bottom:0;border-left:1.5px solid var(--hot)}
+.ax .now::after{content:"now";position:absolute;bottom:-18px;left:-10px;font:.62rem 'JetBrains Mono',monospace;color:var(--hot)}
+/* projects */
+.proj{position:relative}
+#curve{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+#curve path{fill:none;stroke:var(--ink);stroke-width:1.5}
+.pr{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:56px;min-height:260px}
+.pr:nth-child(even){flex-direction:row-reverse}
+.pr .orbz{flex:0 0 150px;height:150px;border-radius:50%;filter:blur(14px);opacity:.9}
+.card{position:relative;z-index:1;display:grid;gap:10px;width:min(540px,100%);padding:26px;background:rgba(35,34,32,.94);border:1px solid var(--line);border-radius:18px;transition:transform .15s ease-out}
+.card .top{display:flex;justify-content:space-between;color:var(--mut);gap:8px}
+.card h3{font-size:1.55rem}
+.card p{margin:0;color:var(--mut)}
+.card a.l{font-weight:600;text-underline-offset:5px}
+#grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;max-width:320px}
+#grid button{aspect-ratio:1;border:1px solid #4a4944;background:#1b1b1b;border-radius:4px;padding:0;transition:background .2s}
+#grid button.hit{background:var(--ink)}
+#grid button.miss{background:rgba(124,200,245,.4)}
+.contact{text-align:center}
+.contact .btns{justify-content:center}
+.cv{margin-top:2.4rem}
+footer{position:relative;z-index:1;text-align:center;color:var(--mut);padding:0 5vw 6vh}
+#cur,#dot,#xy{position:fixed;left:0;top:0;pointer-events:none;z-index:99;opacity:0}
+#cur{width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--ink);border-radius:50%;transition:width .2s,height .2s,margin .2s,background .2s}
+#cur::before,#cur::after{content:"";position:absolute;background:var(--ink)}
+#cur::before{left:50%;top:-6px;bottom:-6px;width:1px}
+#cur::after{top:50%;left:-6px;right:-6px;height:1px}
+#cur.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(124,200,245,.25)}
+#dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--hot)}
+#xy{margin:22px 0 0 22px;color:var(--mut);background:#1b1b1b;padding:1px 6px;border-radius:4px;white-space:nowrap}
+.pt{position:fixed;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;pointer-events:none;z-index:98;animation:fade .9s forwards}
+@keyframes fade{to{opacity:0;transform:scale(.2)}}
+@media (hover:hover) and (pointer:fine){body.cc,body.cc *{cursor:none!important}body.cc #cur,body.cc #dot,body.cc #xy{opacity:1}}
+@media (max-width:760px){.ab{grid-template-columns:1fr}.ab .l{border-right:0;border-bottom:1px solid var(--line)}.dash{grid-template-columns:1fr 1fr}.tl,@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pt{display:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="dot"></div><div id="xy" class="mono"></div>
+
+<nav><b>Eileen Chuba</b><div><a href="#about">About me</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
+
+<section class="hero" id="top">
+  <div class="orb" style="width:340px;height:340px;background:var(--lilac);right:2%;top:10%"></div>
+  <div class="orb" style="width:200px;height:200px;background:var(--lime);right:22%;top:48%"></div>
+  <div class="orb" style="width:260px;height:260px;background:var(--pink);right:-2%;top:62%"></div>
+  <div class="tags mono"><span><i></i>Open to internships</span><span>Loves messy datasets</span><span>Building in public</span></div>
+  <h1 style="margin-top:1.4rem">Eileen Amarachi Chuba<span>Computer Science student, Dundee</span></h1>
+  <p>I’m a second-year Computer Science student with a growing interest in <em>machine learning, artificial intelligence and software development.</em> I enjoy exploring how intelligent systems can be built, trained and deployed to solve real-world problems, and I’m actively developing my skills across Python, Java, JavaScript and data-driven technologies.</p>
+  <div class="btns"><a class="btn fill" href="#contact">Say hi</a><a class="btn" href="#experience">See my experience</a></div>
+</section>
+
+<section id="about">
+  <div class="ab">
+    <div class="l">
+      <h2>About me</h2>
+      <div class="big" id="big" aria-live="polite"></div>
+      <div class="seg" role="group" aria-label="Animation speed"><button aria-pressed="false" data-s="3400">SLOW</button><button aria-pressed="true" data-s="2000">MEDIUM</button><button aria-pressed="false" data-s="900">FAST</button></div>
+      <p id="cap" class="c"></p>
+      <p>Through coursework and personal projects I’ve built a solid foundation in programming, algorithms, data structures and software engineering. Right now I’m strengthening my ML and data science fundamentals while growing my project portfolio.</p>
+    </div>
+    <canvas id="bub" width="640" height="520" role="img" aria-label="Skills as clusters of dots. One skill at a time moves to the centre."></canvas>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <p class="sub">Tap a card to see the details.</p>
+  <div class="dash">
+    <button class="gc" data-i="0" aria-pressed="true"><div class="k">Degree</div><div class="big">Y2/5</div><div class="t">BSc (Hons) Computer Science, Data Science and AI</div><div class="pb"><i style="width:26%"></i></div></button>
+    <button class="gc" data-i="1" aria-pressed="false"><div class="k">Society</div><div class="big">Sec.</div><div class="t">Women in STEM, since Sep 2026</div></button>
+    <button class="gc" data-i="2" aria-pressed="false"><div class="k">Hackathon</div><div class="big">48h</div><div class="t">Team of 4, Sep 2026</div></button>
+    <button class="gc" data-i="3" aria-pressed="false"><div class="k">Peer tutor</div><div class="big">6 mo</div><div class="t">Jan – Jun 2025</div></button>
+    <div class="gc glb"><canvas id="gl" aria-label="Revolving globe with pins for each experience"></canvas><div class="k">Experience globe · tap a pin</div>
+      <div class="pop" id="pop" aria-live="polite"><div class="k" id="pk"></div><h3 id="ph"></h3><div class="t" id="pw"></div><ul id="pl"></ul></div></div>
+    <div class="gc tl"><div class="k">Timeline</div><div class="ax" id="ax"></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects worth flipping to</h2>
+  <p class="sub">Follow the swirl.</p>
+  <div class="proj" id="proj">
+    <svg id="curve" preserveAspectRatio="none"><path id="cp"/><circle id="tr" r="6" fill="#7cc8f5"/></svg>
+    <div class="pr">
+      <article class="card" data-t>
+        <div class="top mono"><span>project-nova</span><span>Java · Sep–Dec 2025</span></div>
+        <h3>Project Nova: Battleship-style game</h3>
+        <p>A grid-based strategy game inspired by Battleship, with grid logic, creature placement, scoring and turn management. Save and load works through MySQL.</p>
+        <div id="grid" aria-label="Mini grid demo"></div>
+        <div id="score" class="mono">Try it: find the hidden creature (6 cells)</div>
+        <a class="l" href="https://github.com/amarachichuba-star/project-Nova" target="_blank" rel="noopener">View project</a>
+      </article>
+      <div class="orbz" style="background:var(--lilac)"></div>
+    </div>
+    <div class="pr">
+      <article class="card" data-t>
+        <div class="top mono"><span>asap-chat</span><span>Java · team · Jan–Feb 2026</span></div>
+        <h3>Java Chat Application</h3>
+        <p>A console-based messaging app with WhatsApp-style features. I worked on data structures for message storage, contacts and keyword search, plus design docs, testing and file-based persistence. It reached 80% unit test coverage.</p>
+        <a class="l" href="https://github.com/amarachichuba-star/ASAP" target="_blank" rel="noopener">View project</a>
+      </article>
+      <div class="orbz" style="background:var(--lime)"></div>
+    </div>
+    <div class="pr">
+      <article class="card" data-t>
+        <div class="top mono"><span>unix-todo</span><span>Bash · Apr 2026</span></div>
+        <h3>Command-Line To-Do List Manager</h3>
+        <p>A Bash to-do app with persistent file storage and an interactive, menu-driven terminal interface. It can add, remove, edit, mark complete, list and filter tasks, and it comes with man-page documentation.</p>
+        <a class="l" href="https://github.com/amarachichuba-star/Unix-To-do" target="_blank" rel="noopener">View project</a>
+      </article>
+      <div class="orbz" style="background:var(--pink)"></div>
+    </div>
+    <div class="pr">
+      <article class="card" data-t>
+        <div class="top mono"><span>blackjack</span><span>AI · group project</span></div>
+        <h3>Blackjack AI Model</h3>
+        <p>A group project building an AI model for Blackjack.</p>
+        <a class="l" href="https://github.com/Frances06/Blackjack" target="_blank" rel="noopener">View project</a>
+      </article>
+      <div class="orbz" style="background:var(--blue)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let’s talk</h2>
+  <p class="sub" style="margin-inline:auto">Open to internships, collabs, or just nerding out about data.</p>
+  <div class="btns"><a class="btn fill" href="mailto:amarachichuba@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/amarachi-chuba-100080390/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/amarachichuba-star" target="_blank" rel="noopener">GitHub</a></div>
+  <p class="mono" style="color:var(--mut);margin:1.4rem 0 0">amarachichuba@gmail.com</p>
+  <div class="btns cv"><a class="btn" href="Eileen_Chuba_CV.pdf" download>Download my CV (PDF)</a></div>
+  
+</section>
+<footer class="mono">© 2026 Eileen Amarachi Chuba</footer>
+
+<script>
+
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return document.querySelectorAll(s)},rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var mx=innerWidth/2,my=innerHeight/2;
+
+/* cursor + grid spotlight */
+var cur=$('#cur'),dot=$('#dot'),xy=$('#xy'),cx=0,cy=0,tx=0,ty=0,last=0,cols=['#7cc8f5','#d4e000','#b8b0dd','#e0b4da'];
+addEventListener('mousemove',function(e){
+  mx=tx=e.clientX;my=ty=e.clientY;
+  document.body.style.setProperty('--mx',mx+'px');document.body.style.setProperty('--my',my+'px');
+  if(!fine)return;
+  dot.style.transform=xy.style.transform='translate('+tx+'px,'+ty+'px)';
+  xy.textContent='x '+tx+'  y '+ty;
+  var n=Date.now();
+  if(!rm&&n-last>70){last=n;var p=document.createElement('div');p.className='pt';p.style.left=tx+'px';p.style.top=ty+'px';p.style.background=cols[(n/70|0)%4];document.body.appendChild(p);setTimeout(function(){p.remove()},900)}
+  cur.classList.toggle('big',!!e.target.closest('a,button'))
+});
+if(fine){document.body.classList.add('cc');(function l(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(l)})()}
+/* skill dots */
+var G=[
+ ['Languages','#b8b0dd',['Python','Java','C','C++','JavaScript','SQL'],160,140],
+ ['Tools','#7cc8f5',['Git/GitHub','VS Code','Linux/Bash','Shell scripting','Node.js','MySQL','AWS'],480,140],
+ ['Concepts','#d4e000',['OOP','Algorithmic complexity','Data structures','Version control','Unit testing'],480,400],
+ ['Soft skills','#e0b4da',['Teamwork','Communication','Leadership','Mentoring','Problem-solving','Organisation'],160,400]];
+var CEN=[320,270],PER=14,C0=3.6,ds=[],fl=[],ix=[0,0,0,0],bc=$('#bub'),b=bc.getContext('2d'),foc=0,sp=2000,tot=0,lt=Date.now(),ft=0;
+G.forEach(function(g,gi){g[2].forEach(function(n,si){fl.push([gi,si]);tot++;for(var k=0;k<PER;k++)ds.push({g:gi,s:si,k:k,i:ix[gi]++,x:g[3]+(Math.random()-.5)*200,y:g[4]+(Math.random()-.5)*200,vx:0,vy:0,p:Math.random()*6.28})})});
+for(var q=fl.length-1;q>0;q--){var j=Math.floor(Math.random()*(q+1)),tmp=fl[q];fl[q]=fl[j];fl[j]=tmp}
+function lab(){var f=fl[foc],g=G[f[0]],e=$('#big');e.textContent=g[2][f[1]];e.style.color=g[1];$('#cap').textContent=g[0]+' · '+g[2].length+' of '+tot+' skills. Click a group to jump to it.'}
+$$('.seg button').forEach(function(x){x.onclick=function(){sp=+x.dataset.s;ft=0;$$('.seg button').forEach(function(y){y.setAttribute('aria-pressed',y===x)})}});
+lab();
+bc.addEventListener('click',function(e){var r=bc.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*640,py=(e.clientY-r.top)/r.height*520,best=-1,bd=110;
+  G.forEach(function(g,gi){var d=Math.hypot(g[3]-px,g[4]-py);if(d<bd){bd=d;best=gi}});if(best<0)return;
+  var idx=[];fl.forEach(function(f,i){if(f[0]===best&&i!==foc)idx.push(i)});foc=idx[Math.floor(Math.random()*idx.length)];ft=0;lab()});
+function dots(){
+  var now=Date.now();ft+=now-lt;lt=now;if(!rm&&ft>sp){ft=0;foc=(foc+1)%fl.length;lab()}
+  var f=fl[foc];b.clearRect(0,0,640,520);
+  ds.forEach(function(d){var g=G[d.g],tx,ty,on=d.g===f[0]&&d.s===f[1];
+    if(on){var a=d.k*2.4,r=4*Math.sqrt(d.k);tx=CEN[0]+Math.cos(a)*r;ty=CEN[1]+Math.sin(a)*r}
+    else{var a2=d.i*2.4,r2=C0*Math.sqrt(d.i);tx=g[3]+Math.cos(a2)*r2+Math.sin(now/900+d.p)*1.6;ty=g[4]+Math.sin(a2)*r2+Math.cos(now/1100+d.p)*1.6}
+    d.vx+=(tx-d.x)*.05;d.vy+=(ty-d.y)*.05;d.vx*=.8;d.vy*=.8;d.x+=d.vx;d.y+=d.vy;
+    b.beginPath();b.arc(d.x,d.y,on?3.7:3,0,7);b.fillStyle=g[1];b.globalAlpha=on?1:.85;b.fill()});
+  b.globalAlpha=1;b.textAlign='center';b.font='500 11px JetBrains Mono';
+  G.forEach(function(g){var rad=C0*Math.sqrt(g[2].length*PER)+18;b.fillStyle='#ece9e0';b.fillText(g[0].toUpperCase(),g[3],g[4]-rad);b.fillStyle='#9a978e';b.fillText(Math.round(g[2].length/tot*100)+'%',g[3],g[4]-rad+13)});
+  b.fillStyle='#ece9e0';b.fillText('IN FOCUS',CEN[0],CEN[1]-36);
+  requestAnimationFrame(dots)
+}
+dots();
+/* experience globe + timeline */
+var E=[
+ ['Degree','BSc (Hons) Computer Science (Data Science and AI)','University of Dundee, with Industrial Placement · 2025 – 2030',['Coursework: Data Structures & Algorithms, Multi-Paradigm Programming, Software Engineering, Artificial Intelligence.'],35,-30],
+ ['Leadership','Secretary, Women in STEM Society','University of Dundee · Sep 2026 – present',['Support weekly workshops and hackathon prep sessions.','Help organise the society’s first beginner-friendly hackathon.'],-20,70],
+ ['Hackathon','Participant, University of Dundee Hackathon','Sep 2026 · 48 hours',['Worked in a team with 3 peers.','Built and presented a working prototype to a panel of judges.'],15,150],
+ ['Tutoring','Peer tutor, Introductory Programming','St Andrews RC High School · Jan – Jun 2025',['Ran weekly sessions helping students debug Java assignments.','Created a beginner-friendly reference guide on common errors.'],-30,-120]];
+var NM=['BSc','Women in STEM','Hackathon','Peer tutor'];
+var gl=$('#gl'),g3=gl.getContext('2d'),gW=0,gH=0,yaw=0,tilt=.3,tgY=0,tgT=.3,gs='spin',gt=0,lim=120,sel=0,lastS=-1,DT=[],GR=100,GX=0,GY=0;
+for(var i0=0;i0<280;i0++)DT.push([Math.asin(Math.random()*2-1),Math.random()*6.2832]);
+function grs(){var d=devicePixelRatio||1;gW=gl.offsetWidth;gH=gl.offsetHeight;gl.width=gW*d;gl.height=gH*d;g3.setTransform(d,0,0,d,0,0)}
+function ang(a){return((a+Math.PI)%6.283185+6.283185)%6.283185-Math.PI}
+function gp(la,lo){var x=Math.cos(la)*Math.sin(lo+yaw),y=Math.sin(la),z=Math.cos(la)*Math.cos(lo+yaw),y2=y*Math.cos(tilt)-z*Math.sin(tilt),z2=y*Math.sin(tilt)+z*Math.cos(tilt);return[GX+x*GR,GY-y2*GR,z2]}
+function gdraw(){
+  var wide=gW>700;GR=wide?Math.min(gW*.27,gH*.37):Math.min(gW*.32,gH*.24);GX=wide?gW*.36:gW/2;GY=wide?gH*.52:gH*.36;
+  g3.clearRect(0,0,gW,gH);
+  var gr=g3.createRadialGradient(GX,GY,GR*.2,GX,GY,GR*1.6);gr.addColorStop(0,'rgba(110,60,255,.3)');gr.addColorStop(1,'rgba(7,5,15,0)');g3.fillStyle=gr;g3.fillRect(0,0,gW,gH);
+  g3.beginPath();g3.arc(GX,GY,GR,0,7);g3.fillStyle='rgba(20,12,50,.55)';g3.fill();
+  var fr=new Path2D(),bk=new Path2D(),la,lo,pts;
+  function line(p){for(var i=1;i<p.length;i++){var a=p[i-1],c=p[i],P=(a[2]+c[2])>0?fr:bk;P.moveTo(a[0],a[1]);P.lineTo(c[0],c[1])}}
+  for(la=-60;la<=60;la+=30){pts=[];for(lo=0;lo<=360;lo+=10)pts.push(gp(la*Math.PI/180,lo*Math.PI/180));line(pts)}
+  for(lo=0;lo<360;lo+=30){pts=[];for(la=-90;la<=90;la+=10)pts.push(gp(la*Math.PI/180,lo*Math.PI/180));line(pts)}
+  g3.lineWidth=1;g3.strokeStyle='rgba(165,107,255,.12)';g3.stroke(bk);g3.strokeStyle='rgba(150,130,255,.5)';g3.stroke(fr);
+  DT.forEach(function(d){var p=gp(d[0],d[1]),f=p[2]>0;g3.fillStyle=f?'rgba(140,160,255,.85)':'rgba(140,160,255,.12)';g3.fillRect(p[0],p[1],f?2:1.2,f?2:1.2)});
+  E.forEach(function(e,i){var p=gp(e[4]*Math.PI/180,e[5]*Math.PI/180);e.p=p;if(p[2]<=0)return;var on=i===sel&&gs==='show';
+    g3.beginPath();g3.arc(p[0],p[1],on?9:5,0,7);g3.fillStyle=on?'#e26bd8':'#a56bff';g3.fill();
+    g3.beginPath();g3.arc(p[0],p[1],(on?18:11)+(Math.sin(Date.now()/300)+1)*3,0,7);g3.strokeStyle='rgba(226,107,216,.5)';g3.stroke();
+    g3.fillStyle='#ece9e0';g3.font='500 11px JetBrains Mono';g3.textAlign='left';g3.fillText(NM[i],p[0]+16,p[1]+4)});
+  g3.beginPath();g3.arc(GX,GY,GR,0,7);g3.strokeStyle='rgba(165,107,255,.6)';g3.stroke();
+}
+function showCard(i){$$('.gc[data-i]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.i==i)});var e=E[i];$('#pk').textContent=e[0];$('#ph').textContent=e[1];$('#pw').textContent=e[2];$('#pl').innerHTML=e[3].map(function(s){return'<li>'+s+'</li>'}).join('');$('#pop').classList.add('on')}
+function hideCard(){$('#pop').classList.remove('on')}
+function go(i){sel=i;lastS=i;tgY=-E[i][5]*Math.PI/180;tgT=E[i][4]*Math.PI/180;hideCard();gs='turn';gt=0;if(rm){yaw=tgY;tilt=tgT;gs='show';showCard(i);gdraw()}}
+$$('.gc[data-i]').forEach(function(x){x.onclick=function(){go(+x.dataset.i)}});
+gl.addEventListener('click',function(e){var r=gl.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;E.forEach(function(en,i){if(en.p&&en.p[2]>0&&Math.hypot(en.p[0]-px,en.p[1]-py)<24)go(i)})});
+function gloop(){
+  if(gs==='spin'){yaw+=.011;tilt+=(.3-tilt)*.04;gt++;if(gt>lim){var n;do{n=Math.floor(Math.random()*E.length)}while(n===lastS);go(n)}}
+  else if(gs==='turn'){var d=ang(tgY-yaw);yaw+=d*.05;tilt+=(tgT-tilt)*.05;if(Math.abs(d)<.012&&Math.abs(tgT-tilt)<.012){gs='show';gt=0;showCard(sel)}}
+  else{gt++;if(gt>360){hideCard();gs='spin';gt=0;lim=80+Math.random()*140}}
+  gdraw();if(!rm)requestAnimationFrame(gloop)}
+addEventListener('resize',function(){grs();gdraw()});grs();gdraw();if(rm)go(0);gloop();
+var ax=$('#ax'),Y0=2025,SP=5,P=function(y){return(y-Y0)/SP*100};
+for(var y=2025;y<=2030;y++)ax.insertAdjacentHTML('beforeend','<div class="y" style="left:'+P(y)+'%">'+y+'</div>');
+[[2025.7,2030,'BSc'],[2025,2025.5,'Tutor'],[2026.7,2026.9,'Secretary'],[2026.7,2026.74,'Hackathon']].forEach(function(r,i){
+  var wd=Math.max(1.2,P(r[1])-P(r[0])),inside=r[1]-r[0]>.4;
+  ax.insertAdjacentHTML('beforeend','<div class="bar" style="left:'+P(r[0])+'%;width:'+wd+'%;top:'+(28+i*28)+'px">'+(inside?r[2]:'<span style="position:absolute;left:calc(100% + 8px)">'+r[2]+'</span>')+'</div>')});
+ax.insertAdjacentHTML('beforeend','<div class="now" style="left:'+P(2026.89)+'%"></div>');
+/* projects: swirl path through the orbs */
+var proj=$('#proj'),cp=$('#cp'),tr=$('#tr'),L=0,prog=0;
+function curve(){
+  var pr=proj.getBoundingClientRect(),w=pr.width,h=pr.height;$('#curve').setAttribute('viewBox','0 0 '+w+' '+h);
+  var pts=[[w*.5,0]];
+  $$('.orbz').forEach(function(o){var r=o.getBoundingClientRect();pts.push([r.left-pr.left+r.width/2,r.top-pr.top+r.height/2])});
+  if(getComputedStyle($$('.orbz')[0]).display==='none')pts=[[w*.5,0],[w*.9,h*.25],[w*.1,h*.5],[w*.9,h*.75],[w*.5,h]];
+  else pts.push([w*.5,h]);
+  var d='M'+pts[0][0]+' '+pts[0][1];
+  for(var i=1;i<pts.length;i++){var a=pts[i-1],q=pts[i],m=(a[1]+q[1])/2;d+=' C'+(a[0]+(i%2?-1:1)*w*.25)+' '+(a[1]+(q[1]-a[1])*.1)+' '+(q[0]+(i%2?1:-1)*w*.25)+' '+(q[1]-(q[1]-a[1])*.35)+' '+q[0]+' '+q[1]}
+  cp.setAttribute('d',d);L=cp.getTotalLength();cp.style.strokeDasharray=L;sc()}
+function sc(){var r=proj.getBoundingClientRect();prog=Math.min(1,Math.max(0,(innerHeight*.8-r.top)/r.height));cp.style.strokeDashoffset=rm?0:L*(1-prog);var p=cp.getPointAtLength(L*prog);tr.setAttribute('cx',p.x);tr.setAttribute('cy',p.y)}
+addEventListener('resize',curve);addEventListener('scroll',sc,{passive:true});curve();setTimeout(curve,600);
+if(document.fonts)document.fonts.ready.then(curve);
+if(!rm&&fine)$$('[data-t]').forEach(function(c){
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.transform='perspective(800px) rotateX('+(-(e.clientY-r.top-r.height/2)/r.height*4)+'deg) rotateY('+((e.clientX-r.left-r.width/2)/r.width*4)+'deg)'});
+  c.addEventListener('mouseleave',function(){c.style.transform=''})});
+/* mini game */
+var g=$('#grid'),ship={9:1,10:1,11:1,19:1,18:1,17:1},hits=0,shots=0;
+for(var i=0;i<32;i++){(function(i){var q=document.createElement('button');q.setAttribute('aria-label','cell '+(i+1));q.onclick=function(){
+  if(q.className)return;shots++;if(ship[i]){q.className='hit';hits++}else q.className='miss';
+  $('#score').textContent=hits===6?'Creature found in '+shots+' shots. Nice.':'Hits '+hits+'/6 · shots '+shots;setTimeout(curve,50)};g.appendChild(q)})(i)}
+if(!rm)addEventListener('mousemove',function(e){$$('.hero .orb').forEach(function(o,i){o.style.transform='translate('+((e.clientX/innerWidth-.5)*(20+i*14))+'px,'+((e.clientY/innerHeight-.5)*(20+i*14))+'px)'})});
+})();
+</script>
+</body>
+</html>
